@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/your-user/sample-node-app.git'
+                git 'https://github.com/Durga07/CI_Pipeline.git'
             }
         }
         stage('Build') {
