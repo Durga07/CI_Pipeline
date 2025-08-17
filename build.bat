@@ -1,2 +1,2 @@
-#!/bin/bash
-echo "Building the project..."
+@echo off
+echo Building the project...
