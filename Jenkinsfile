@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Run Docker Container') {
             steps {
-                sh 'docker run -d -p 3000:3000 my-node-app'
+                bat 'docker run -d -p 3000:3000 my-node-app'
             }
         }
     }
