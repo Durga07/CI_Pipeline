@@ -1,14 +1,21 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Clone') {
             steps {
-                bat 'build.bat'
+                git 'https://github.com/Durga07/CI_Pipeline.git'
             }
         }
-        stage('Test') {
+        stage('Build Docker Image') {
             steps {
-                bat 'test.bat'
+                script {
+                    docker.build('my-node-app')
+                }
+            }
+        }
+        stage('Run Docker Container') {
+            steps {
+                sh 'docker run -d -p 3000:3000 my-node-app'
             }
         }
     }
